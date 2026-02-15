@@ -1,0 +1,16 @@
+{
+    "name": "@glpi-project/illustrations",
+    "version": "0.9.1",
+    "author": "Alexandre Delaunay <adelaunay@teclib.com> (https://github.com/orthagh)",
+    "license": "CC-BY-SA-4.0",
+    "files": [
+        "dist/*"
+    ],
+    "devDependencies": {
+        "svg-chameleon": "^1.0.1"
+    },
+    "scripts": {
+        "build-icons": "svg-chameleon --config svg-chameleon.config.json --path svg/icons --name glpi-illustrations-icons",
+        "build-scenes": "svg-chameleon --config svg-chameleon.config.json --path svg/scenes --name glpi-illustrations-scenes"
+    }
+}

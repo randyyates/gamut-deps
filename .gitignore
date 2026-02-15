@@ -1,0 +1,6 @@
+# Ignore nested .git so this repo is a single history (we track the dependency trees, not their clone metadata)
+inventory_format/.git
+phpstan-glpi/.git
+illustrations/.git
+# Temporary backup of .git when pushing to gamut-deps
+*.git.bak
