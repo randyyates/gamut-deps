@@ -1,5 +1,7 @@
 # Forked GLPI dependencies
 
+This folder is also published as the **gamut-deps** repo on GitHub: **https://github.com/randyyates/gamut-deps**
+
 These directories are clones of GLPI project packages, used locally so we can maintain our own forks and avoid depending on upstream for builds.
 
 | Directory | Upstream | Purpose |
@@ -34,3 +36,16 @@ These directories are clones of GLPI project packages, used locally so we can ma
 - **gamut/package.json** has `"@glpi-project/illustrations": "file:../deps/illustrations"`. Run `npm install` from `gamut/` to link the local package.
 
 Running `composer install` or `npm install` from `gamut/` will use these local deps; no need to publish to Packagist or npm.
+
+## Pushing to GitHub
+
+This directory is a git repo with `origin` → `https://github.com/randyyates/gamut-deps.git`. To push (e.g. after adding the deps or updating the README):
+
+```bash
+cd deps
+git add -A
+git status   # then commit if needed
+git push -u origin main
+```
+
+Use your usual GitHub auth (SSH key, token, or gh CLI).
