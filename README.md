@@ -1,6 +1,6 @@
-# Forked GLPI dependencies
+# Forked GLPI dependencies (gamut-deps)
 
-This folder is also published as the **gamut-deps** repo on GitHub: **https://github.com/randyyates/gamut-deps**
+This folder is published as **https://github.com/randyyates/gamut-deps**. Use SSH only: `git@github.com:randyyates/gamut-deps.git`.
 
 These directories are clones of GLPI project packages, used locally so we can maintain our own forks and avoid depending on upstream for builds.
 
@@ -19,10 +19,10 @@ These directories are clones of GLPI project packages, used locally so we can ma
 ## Using your own forks
 
 1. Fork each repo on GitHub (e.g. under your user or `gamutit` org).
-2. In each directory, add your fork as a remote and push:
+2. In each directory, add your fork as a remote and push (use SSH URLs):
    ```bash
    cd deps/inventory_format
-   git remote add myfork https://github.com/YOUR_USER/inventory_format.git
+   git remote add myfork git@github.com:YOUR_USER/inventory_format.git
    git push myfork 1.2.3
    # Optional: create a branch for your changes
    git checkout -b gamut
@@ -39,13 +39,10 @@ Running `composer install` or `npm install` from `gamut/` will use these local d
 
 ## Pushing to GitHub
 
-This directory is a git repo with `origin` → `https://github.com/randyyates/gamut-deps.git`. To push (e.g. after adding the deps or updating the README):
+Origin is SSH only: `git@github.com:randyyates/gamut-deps.git`. Use the `~/.ssh/randyyates` key. To push:
 
 ```bash
 cd deps
-git add -A
-git status   # then commit if needed
-git push -u origin main
+git add -A && git status   # then commit if needed
+GIT_SSH_COMMAND="ssh -i ~/.ssh/randyyates -o IdentitiesOnly=yes" git push -u origin main
 ```
-
-Use your usual GitHub auth (SSH key, token, or gh CLI).
